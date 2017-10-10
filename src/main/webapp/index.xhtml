@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="description" content=""/>
+        <meta name="author" content=""/>
+        <link rel="shortcut icon" href="assets/ico/favicon.ico"/>
+
+        <title>Tienda Demo</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="assets/css/bootstrap.css" rel="stylesheet"/>
+
+        <!-- Custom styles for this template -->
+        <link href="assets/css/style.css" rel="stylesheet"/>
+        <link href="assets/css/font-awesome.min.css" rel="stylesheet"/>
+    </h:head>
+    <h:body>
+        <!-- Static navbar -->
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.xhtml">PROTOREDES</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a href="#">Inicio</a></li>
+                        <li><a href="login.xhtml" id="login">Login</a></li>
+                        <li><a href="logout.xhtml" id="logout">Logout</a></li>
+                        <li><a href="#products">Productos</a></li>
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+        </div>
+
+        <div id="headerwrap">
+	    <div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+                                    <h2>Bienvenido </h2> <h:outputText value="#{usuarioDAO.name}"/>
+					<h1>[NOMBRE]</h1>
+					<h4>[SLOGAN]</h4>
+					<h3>[NOTICIAS/FRASE PROMOCIONAL]</h3>
+				</div>
+			</div>
+	    </div> <!-- /container -->
+	</div>
+        <section id="products"></section>
+	<div class="container">
+		<div class="row centered mt mb">
+			<h1>Productos</h1>
+                        <h2>DEMO</h2>
+			
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="#products"><img src="assets/img/portfolio/drink2.jpeg" class="img-responsive" 
+                                                         style="width: 25vw; height: 25vw;"/></a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="#products"><img src="assets/img/portfolio/drink2.jpeg" class="img-responsive"
+                                                         style="width: 25vw; height: 25vw;"/></a>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
+				<a href="#products"><img src="assets/img/portfolio/cubiertos.jpeg" class="img-responsive"
+                                                         style="width: 25vw; height: 25vw;"/></a>
+			</div>
+		</div><!--/row -->
+	</div><!--/container -->
+	
+	<div id="social">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-2">
+					<a href="https://dribbble.com/"><i class="fa fa-dribbble"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="https://www.facebook.com"><i class="fa fa-facebook"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="https://www.twitter.com"><i class="fa fa-twitter"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="https://www.linkedin.com"><i class="fa fa-linkedin"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="https://www.instagram.com"><i class="fa fa-instagram"></i></a>
+				</div>
+				<div class="col-lg-2">
+					<a href="https://www.tumblr.com"><i class="fa fa-tumblr"></i></a>
+				</div>
+			
+			</div><!--/row -->
+		</div><!--/container -->
+	</div><!--/social -->
+
+	<div id="footerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="col-lg-4">
+					<p><b>GOOD PRODUCTS</b></p>
+				</div>
+			
+				<div class="col-lg-4">
+					<p>From [COUNTRY]</p>
+				</div>
+				<div class="col-lg-4">
+					<p>At [MAIL]</p>
+				</div>
+			</div>
+		</div>
+	</div><!--/footerwrap -->
+	
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+            if ("#{usuarioDAO.name}".length > 0) {
+                $('#login').css('font-size', '0');
+                $('#logout').css('font-size', '16px');
+            } else {
+                $('#login').css('font-size', '16px');
+                $('#logout').css('font-size', '0px');
+            }
+    </script>
+    </h:body>
+</html>
+
