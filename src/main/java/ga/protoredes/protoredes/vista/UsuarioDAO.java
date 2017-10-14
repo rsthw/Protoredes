@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ga.protoredes.protoredes.db;
+package ga.protoredes.protoredes.vista;
 
 import ga.protoredes.protoredes.modelo.*;
 import ga.protoredes.protoredes.controlador.*;

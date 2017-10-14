@@ -26,69 +26,54 @@
             <div class="tab-content">
 
                 <div id="signup">   
-                    <h1>Sign Up for Free</h1>
+                    <h1>Registra tus datos</h1>
 
                     <h:form>
-
-                        <div class="field-wrap">
-                            <label>
-                                First Name<span class="req">*</span>
-                            </label>
-                            <p:inputText required="true" style="width:100%" disabled="true"></p:inputText>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Last Name<span class="req">*</span>
-                            </label>
-                            <p:inputText required="true" style="width:100%" disabled="true"></p:inputText>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Email<span class="req">*</span>
-                            </label>
-                            <p:inputText required="true" style="width:100%" disabled="true"></p:inputText>
-                        </div>
-                        <div class="field-wrap">
-                            <label>
-                                Password<span class="req">*</span>
-                            </label>
-                            <p:inputText required="true" style="width:100%" disabled="true"></p:inputText>
-                        </div>
-
-                        <p:commandButton class="button button-block" disabled="true"/>
-                        
-                        <!--button class="button button-block"/>Log In</button-->
-
+                            <div class="field-wrap">
+                                <h:outputText value = "Usuario" style ="color:white" />
+                                <p:inputText id="usuarioregistro" value="#{usuarioReg.usuario.username}" required="true" style="width:100%"></p:inputText>
+                                <h:outputText value = "Contraseña" style="color:white"/>
+                                <p:password id="contrasenausuario" value="#{usuarioReg.usuario.contrasena}"  feedback="false" required="true" style="width:100%"></p:password>
+                            </div>
+                            
+                            <div class="field-wrap">
+                                <h:outputText value = "Correo" style ="color:white" />
+                                <p:inputText id="usuario2" value="#{usuarioReg.correo.correo}" required="true" style="width:100%"></p:inputText>
+                                <h:outputText value = "Contraseña" style="color:white"/>
+                                <p:password id="password" value="#{usuarioReg.correo.contrasena}"  feedback="false" required="true" style="width:100%"></p:password>
+                            </div>
+                            
+                            <div class="field-wrap">
+                                <h:outputText value = "Numero de tarjeta" style ="color:white" />
+                                <p:inputText id="numerotarjeta" value="#{usuarioReg.tarjeta.numeroTarjeta}" required="true" style="width:100%"></p:inputText>
+                                <h:outputText value = "Fecha" style="color:white"/>
+                                <p:password id="nip" value="#{usuarioReg.tarjeta.nip}"  feedback="false" required="true" style="width:100%"></p:password>
+                                <h:outputText value = "Digitos al reverso" style="color:white"/>
+                                <p:password id="digitosreverso" value="#{usuarioReg.tarjeta.digitosReverso}"  feedback="false" required="true" style="width:100%"></p:password>
+                            </div>
+                            
+                            
+                            
+                        <p:commandButton action="#{usuarioReg.registraUsuario}" styleClass="mygreen" value="Registrate" ajax="false" class="button button-block"/>
+                            <p class="forgot"><a href="#">Forgot Password?</a></p>
                     </h:form>
+
 
                 </div>
 
                 <div id="login">   
-                    <h1>Bienvenido!</h1>
+                    <h1>Ingresa</h1>
 
                     <h:form>
-
-                        <div class="field-wrap">
-                            <label>
-                                Usuario<span class="req">*</span>
-                            </label>
-                            <p:inputText id="usuario" value="#{usuarioDAO.correo}" required="true" style="width:100%"></p:inputText>
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Password<span class="req">*</span>
-                            </label>
-                            <p:password id="password" value="#{usuarioDAO.password}"  feedback="false" required="true" style="width:100%"></p:password>
-                        </div>
-
-                        <p:commandButton action="#{usuarioDAO.iniciarSesion}" styleClass="mygreen" value="Login" ajax="false" class="button button-block"/>
-                        <p class="forgot"><a href="#">Forgot Password?</a></p>
-
-                        <!--button class="button button-block"/>Log In</button-->
-
+                            <div class="field-wrap">
+                                <h:outputText value = "Usuario" style ="color:white" />
+                                <p:inputText id="usuario2" value="#{usuarioDAO.correo}" required="true" style="width:100%"></p:inputText>
+                                <h:outputText value = "Contraseña" style="color:white"/>
+                                <p:password id="password" value="#{usuarioDAO.password}"  feedback="false" required="true" style="width:100%"></p:password>
+                            </div>
+                            
+                            <p:commandButton action="#{usuarioDAO.iniciarSesion}" styleClass="mygreen" value="Login" ajax="false" class="button button-block"/>
+                            <p class="forgot"><a href="#">Forgot Password?</a></p>
                     </h:form>
 
                 </div>

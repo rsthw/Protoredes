@@ -1,0 +1,9 @@
+Your VPS name is: vps148744.vps.ovh.ca
+Password:y0fOXYkV
+
+Your VPS name is: vps148745.vps.ovh.ca
+Password:0MhCoTee
+
+En Mysql 
+user:root
+password:Hola1357

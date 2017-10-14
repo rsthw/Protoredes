@@ -24,7 +24,7 @@ import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author SANTIAGO LEY
+ * @author antonio
  */
 @Entity
 @Table(name = "articulo")
@@ -36,6 +36,12 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Articulo.findByDescripcion", query = "SELECT a FROM Articulo a WHERE a.descripcion = :descripcion")
     , @NamedQuery(name = "Articulo.findByPrecio", query = "SELECT a FROM Articulo a WHERE a.precio = :precio")})
 public class Articulo implements Serializable {
+
+    @Basic(optional = false)
+    @NotNull
+    @Size(min = 1, max = 255)
+    @Column(name = "Imagen")
+    private String imagen;
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -149,6 +155,14 @@ public class Articulo implements Serializable {
     @Override
     public String toString() {
         return "ga.protoredes.protoredes.modelo.Articulo[ id=" + id + " ]";
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
     
 }

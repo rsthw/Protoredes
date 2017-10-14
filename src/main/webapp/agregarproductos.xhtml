@@ -1,8 +1,9 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-    <h:head>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" xmlns:ui="http://xmlns.jcp.org/jsf/facelets">    <h:head>
         <meta charset="utf-8"/>
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -38,7 +39,6 @@
                         <li><a href="login.xhtml" id="login">Login</a></li>
                         <li><a href="logout.xhtml" id="logout">Logout</a></li>
                         <li><a href="productos.xhtml">Productos</a></li>
-                        <li><a href="agregarproductos.xhtml">Agregar productos</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -46,34 +46,26 @@
 
         <div id="headerwrap">
 	    <div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-lg-offset-3">
-                                    	<h1>Bienvenido</h1>
-				</div>
-			</div>
+	       <div class="row">
+		 <div class="col-lg-6 col-lg-offset-3">
+                   <h:form enctype="multipart/form-data"> 
+                            <h:outputText value = "Nombre" style ="color:white" />
+                            <p:inputText id="usuarioregistro" value="#{agregaArticulo.articulo.nombre}" required="true" style="width:100%"></p:inputText>
+                            <h:outputText value = "Descripcion" style ="color:white" />
+                            <p:inputText id="usuarioregistro2" value="#{agregaArticulo.articulo.descripcion}" required="true" style="width:100%"></p:inputText>
+                            <h:outputText value = "Precio" style ="color:white" />
+                            <p:inputText id="usuarioregistro3" value="#{agregaArticulo.articulo.precio}" required="true" style="width:100%"></p:inputText>
+                            <p:fileUpload value="#{agregaArticulo.imagen}" mode="simple"/>
+                            <p:commandButton value="agregar artículo" action="#{agregaArticulo.registraArticulo()}" ajax="false" icon="ui-icon-check"/>
+                    </h:form>                     
+
+		 </div>
+		</div>
 	    </div> <!-- /container -->
 	</div>
-        <section id="products"></section>
-	<div class="container">
-		<div class="row centered mt mb">
-			<h1>Productos</h1>
-                        <h2>DEMO</h2>
-			
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="#products"><img src="assets/img/portfolio/drink2.jpeg" class="img-responsive" 
-                                                         style="width: 25vw; height: 25vw;"/></a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="#products"><img src="assets/img/portfolio/drink2.jpeg" class="img-responsive"
-                                                         style="width: 25vw; height: 25vw;"/></a>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-4 gallery">
-				<a href="#products"><img src="assets/img/portfolio/cubiertos.jpeg" class="img-responsive"
-                                                         style="width: 25vw; height: 25vw;"/></a>
-			</div>
-		</div><!--/row -->
-	</div><!--/container -->
-	
+        
+        
+       
 	<div id="social">
 		<div class="container">
 			<div class="row centered">
@@ -124,15 +116,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
-            if ("#{usuarioDAO.name}".length > 0) {
-                $('#login').css('font-size', '0');
-                $('#logout').css('font-size', '16px');
-            } else {
-                $('#login').css('font-size', '16px');
-                $('#logout').css('font-size', '0px');
-            }
-    </script>
+
     </h:body>
 </html>
 

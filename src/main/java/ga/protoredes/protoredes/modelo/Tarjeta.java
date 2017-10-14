@@ -19,12 +19,13 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
- * @author SANTIAGO LEY
+ * @author antonio
  */
 @Entity
 @Table(name = "tarjeta")
@@ -45,8 +46,9 @@ public class Tarjeta implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
+    @Size(min = 1, max = 255)
     @Column(name = "NumeroTarjeta")
-    private int numeroTarjeta;
+    private String numeroTarjeta;
     @Basic(optional = false)
     @NotNull
     @Column(name = "DigitosReverso")
@@ -65,7 +67,7 @@ public class Tarjeta implements Serializable {
         this.id = id;
     }
 
-    public Tarjeta(Integer id, int numeroTarjeta, int digitosReverso, int nip) {
+    public Tarjeta(Integer id, String numeroTarjeta, int digitosReverso, int nip) {
         this.id = id;
         this.numeroTarjeta = numeroTarjeta;
         this.digitosReverso = digitosReverso;
@@ -80,11 +82,11 @@ public class Tarjeta implements Serializable {
         this.id = id;
     }
 
-    public int getNumeroTarjeta() {
+    public String getNumeroTarjeta() {
         return numeroTarjeta;
     }
 
-    public void setNumeroTarjeta(int numeroTarjeta) {
+    public void setNumeroTarjeta(String numeroTarjeta) {
         this.numeroTarjeta = numeroTarjeta;
     }
 
