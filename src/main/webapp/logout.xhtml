@@ -23,7 +23,12 @@
                 <li class="tab"><a href="#login">Log In</a></li>
             </ul>
 
+	</div>                 
+	<script type="text/javascript">
+             if ("#{usuarioDAO.cerrarSesion()}".length > 0) {
                  
-
+                 window.location.href = 'index.xhtml';
+             }
+         </script>
     </h:body>
 </html>
